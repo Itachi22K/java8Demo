@@ -1,6 +1,5 @@
 package com.zbs.stream;
 
-import com.zbs.functioninter.InterfaceEntry;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 /**
  * description: StreamTest
@@ -34,24 +32,28 @@ public class OptionalTest {
         stringCollection.add("ccc");
         stringCollection.add("bbb2");
         stringCollection.add("ddd1");
-        InterfaceEntry interfaceEntry = System.out::println;
+//        InterfaceEntry interfaceEntry = System.out::println;
         // filter过滤、forEach遍历
         //stringCollection.stream().filter((s) -> s.startsWith("b")).forEach(System.out::println);
+//        List<String> b = stringCollection.stream().filter((s) -> s.startsWith("b")).collect(Collectors.toList());
+//        System.out.println(b.toString());
 
         // sorted进行排序
         //stringCollection.stream().sorted((s1, s2) -> s1.compareTo(s2)).forEach(System.out::println);
         //stringCollection.stream().sorted(String::compareTo).forEach(System.out::println);
 
         //Map 映射转换对象
-        stringCollection.stream().map(s -> s + "_zbs").forEach(System.out::println);
-        stringCollection.stream().map(s -> s + "_zbs").collect(Collectors.toList()).forEach(System.out::println);
+//        stringCollection.stream().map(s -> s + "_zbs").forEach(System.out::println);
+//        stringCollection.stream().map(s -> s + "_zbs").collect(Collectors.toList()).forEach(System.out::println);
+//        stringCollection.stream().map(s -> s + "_zbs");
+//        System.out.println(stringCollection.get(1));
 
         //Match 匹配
 //        testMatch(stringCollection);
 
         //count计数
-//        long num = stringCollection.stream().filter(s -> s.startsWith("b")).count();
-//        System.out.println(num);
+        long num = stringCollection.stream().filter(s -> s.startsWith("b")).count();
+        System.out.println(num);
     }
 
     public static void testMatch(List<String> stringCollection) {
@@ -59,12 +61,12 @@ public class OptionalTest {
         // 任意匹配
         boolean anyStartsWithA = stringCollection.stream().anyMatch(s -> s.startsWith("a"));
         System.out.println(anyStartsWithA);
-        // 全部匹配
-        boolean allStartsWithA = stringCollection.stream().allMatch(s -> s.startsWith("a"));
-        System.out.println(allStartsWithA);
-        // 不匹配
-        boolean noneStartsWithA = stringCollection.stream().noneMatch(s -> s.startsWith("a"));
-        System.out.println(noneStartsWithA);
+//        // 全部匹配
+//        boolean allStartsWithB = stringCollection.stream().allMatch(s -> s.startsWith("a"));
+//        System.out.println(allStartsWithB);
+//        // 不匹配
+//        boolean noneStartsWithC = stringCollection.stream().noneMatch(s -> s.startsWith("a"));
+//        System.out.println(noneStartsWithC);
     }
 
     @Test
@@ -205,5 +207,18 @@ public class OptionalTest {
     @Test
     public void testCompose() {
         System.out.println(composeTest(2, value -> value * 3, value -> value * value));
+    }
+
+    @Test
+    public void testList() {
+        List list = new ArrayList();
+        list.add(5);
+
+        for (int i = 0; i <= list.size() - 2; i++) {
+            // 不满足i <= list.size() - 2，则不会进入循环
+            System.out.println(list.get(i));
+            System.out.println(list.get(i + 1));
+        }
+        System.out.println("dddddd");
     }
 }

@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -36,23 +35,30 @@ public class CommonStreamTest {
     @Test
     public void filterTest() {
         List<User> userList = Arrays.asList(
-                new User(1L, "mengday", 28),
-                new User(2L, "guoguo", 18),
-                new User(3L, "liangliang", 17)
+                new User(1L, "mengday", 28, new BigDecimal(11)),
+                new User(2L, "guoguo", 18, new BigDecimal(20)),
+                new User(3L, "liangliang", 17, new BigDecimal(33))
         );
-        userList.stream().filter(user -> user.getAge() > 18).forEach(System.out::println);
-        List<User> userList2 = userList.stream().filter(user -> user.getAge() > 18).collect(Collectors.toList());
+        System.out.println(userList.stream().filter(user -> user.getMoney().compareTo(new BigDecimal(18)) == 1).map(User::getMoney).reduce(BigDecimal::add));
 
-        System.out.println("=======分割输出======");
-        Consumer<User> consumer = System.out::println;
-        for (User user : userList) {
-            consumer.accept(user);
-        }
+        BigDecimal bb = BigDecimal.valueOf(15);
+        System.out.println(bb.toString());
+        String cc = bb.toString();
+        System.out.println(cc);
 
-        System.out.println("=======分割输出======");
-        for (User user : userList2) {
-            consumer.accept(user);
-        }
+//        userList.stream().filter(user -> user.getAge() > 18).forEach(System.out::println);
+//        List<User> userList2 = userList.stream().filter(user -> user.getAge() > 18).collect(Collectors.toList());
+//
+//        System.out.println("=======分割输出======");
+//        Consumer<User> consumer = System.out::println;
+//        for (User user : userList) {
+//            consumer.accept(user);
+//        }
+//
+//        System.out.println("=======分割输出======");
+//        for (User user : userList2) {
+//            consumer.accept(user);
+//        }
     }
 
     /**

@@ -56,7 +56,7 @@ public class SendMailUtils {
 
         // 设置发送邮件的邮件服务器的属性（这里使用网易的smtp服务器）
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", 25);
+        props.put("mail.smtp.port", 465);
         // 需要经过授权，也就是有户名和密码的校验，这样才能通过验证（一定要有这一条）
         props.put("mail.smtp.auth", "true");
 
@@ -116,7 +116,7 @@ public class SendMailUtils {
         SendMailUtils cn = new SendMailUtils();
         // 设置发件人地址、收件人地址和邮件标题
         //发给QQ邮箱用户
-        cn.setAddress("mail@zqjc-jx.com", "zhangbaoshuai@cph.citic", "一个不带附件的JavaMail邮件");
+        cn.setAddress("fzctjh@163.com", "zhangbaoshuai@cph.citic", "一个不带附件的JavaMail邮件");
         //发给163邮箱用户
 //        cn.setAddress("250468591@qq.com", "15732136890@163.com", "一个不带附件的JavaMail邮件");
 
@@ -134,12 +134,12 @@ public class SendMailUtils {
          */
 
         // 注意： [授权码和你平时登录的密码是不一样的]
-        //cn.send("smtp.163.com", "m157****0661@163.com", "gebilaowang123");
+        cn.send("smtp.163.com", "fzctjh@163.com", "SORAGWTNYMIEBSUH");
 
         //QQ邮箱授权
 //        cn.send("smtp.qq.com", "250468591@qq.com", "wftfaksmqikwbjcb");
 
 
-        cn.send("smtp.exmail.qq.com", "mail@zqjc-jx.com", "n5ZhGLocfjk7h87m");
+//        cn.send("smtp.exmail.qq.com", "mail@zqjc-jx.com", "n5ZhGLocfjk7h87m");
     }
 }

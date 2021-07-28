@@ -139,5 +139,17 @@ public class TestDemo {
         return "dddd";
     }
 
+    @Test
+    public void test6() {
+        System.out.println(test5());
+    }
+
+    public int test5() {
+        Calendar cal = Calendar.getInstance();
+        return cal.get(Calendar.HOUR_OF_DAY);
+//        Date date = new Date();
+//        return date.getHours();
+    }
+
 }
 
