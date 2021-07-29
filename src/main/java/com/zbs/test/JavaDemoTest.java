@@ -1,7 +1,7 @@
 package com.zbs.test;
 
-import com.zbs.Constants;
-import com.zbs.stream.commonStream.User;
+import com.zbs.common.Constants;
+import com.zbs.java8.stream.commonStream.User;
 import org.junit.Test;
 
 import java.util.ArrayList;

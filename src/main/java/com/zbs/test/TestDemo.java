@@ -1,9 +1,9 @@
-package com.zbs;
+package com.zbs.test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zbs.stream.commonStream.User;
+import com.zbs.java8.stream.commonStream.User;
 import org.junit.Test;
 
 import java.time.LocalDate;

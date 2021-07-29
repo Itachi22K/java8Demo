@@ -1,4 +1,4 @@
-package com.zbs.functioninter;
+package com.zbs.java8.functioninter;
 
 import java.util.Arrays;
 import java.util.Comparator;

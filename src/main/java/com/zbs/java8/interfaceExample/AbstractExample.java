@@ -1,4 +1,4 @@
-package com.zbs.interfaceExample;
+package com.zbs.java8.interfaceExample;
 
 /**
  * description: abstractExample

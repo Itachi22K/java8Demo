@@ -1,6 +1,6 @@
-package com.zbs.interfaceExample.impl;
+package com.zbs.java8.interfaceExample.impl;
 
-import com.zbs.interfaceExample.DailyAction;
+import com.zbs.java8.interfaceExample.DailyAction;
 import org.junit.Test;
 
 /**

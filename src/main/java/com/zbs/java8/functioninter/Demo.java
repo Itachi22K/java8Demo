@@ -1,4 +1,4 @@
-package com.zbs.functioninter;
+package com.zbs.java8.functioninter;
 
 /**
  * description: Demo 函数式接口例子

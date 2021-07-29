@@ -1,4 +1,4 @@
-package com.zbs.stream;
+package com.zbs.java8.stream;
 
 import org.junit.Test;
 

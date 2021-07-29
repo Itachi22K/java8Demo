@@ -1,4 +1,4 @@
-package com.zbs.demo;
+package com.zbs.java8.demo;
 
 /**
  * description: Demo01Logger  日志案例

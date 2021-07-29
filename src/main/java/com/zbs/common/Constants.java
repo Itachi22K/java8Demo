@@ -1,4 +1,4 @@
-package com.zbs;
+package com.zbs.common;
 
 /**
  * description: Constants

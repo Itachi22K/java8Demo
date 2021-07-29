@@ -1,4 +1,4 @@
-package com.zbs;
+package com.zbs.test;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.zbs.anonymityClass;
+package com.zbs.java8.anonymityClass;
 
 /**
  * description: Father

@@ -1,4 +1,4 @@
-package com.zbs.interfaceExample;
+package com.zbs.java8.interfaceExample;
 
 /**
  * 接口：可以有实现，可以没实现；有点像抽象类
