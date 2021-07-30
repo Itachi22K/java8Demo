@@ -5,6 +5,7 @@ import com.zbs.java8.stream.commonStream.User;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -62,6 +63,30 @@ public class JavaDemoTest {
                     }
                 }
         );
+    }
+
+    @Test
+    public void testObjectList() {
+        List<User> userData = JavaDemoTest.getUserData();
+        userData.stream().forEach(
+                user -> System.out.println(user.toString())
+        );
+        userData.get(userData.size() - 1).setUserName("我被改变了");
+        System.out.println("------------" + userData.get(userData.size() - 1));
+        userData.stream().forEach(
+                user -> System.out.println(user.toString())
+        );
+    }
+
+    @Test
+    public void testIntList() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 5, 7, 9);
+        list.stream().forEach(
+                i -> System.out.println(i)
+        );
+        Integer jk = list.get(list.size() - 1);
+        jk = 100;
+        System.out.println(list);
     }
 
 }
