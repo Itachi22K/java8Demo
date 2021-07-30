@@ -68,17 +68,29 @@ public class JavaDemoTest {
     @Test
     public void testObjectList() {
         List<User> userData = JavaDemoTest.getUserData();
-//        userData.stream().forEach(
-//                user -> System.out.println(user.toString())
-//        );
+        System.out.println("-----------原数据-----------");
+        userData.stream().forEach(
+                user -> System.out.println(user.toString())
+        );
+
+        System.out.println("-----------直接更改-----------");
         userData.get(userData.size() - 1).setUserName("我被改变了");
         System.out.println("------------" + userData.get(userData.size() - 1));
         userData.stream().forEach(
                 user -> System.out.println(user.toString())
         );
 
+        System.out.println("-----------对象引用更改-----------");
         User user1 = userData.get(userData.size() - 1);
         user1.setUserName("对象更改，我被改变了，第二次");
+        System.out.println("------------" + userData.get(userData.size() - 1));
+        userData.stream().forEach(
+                user -> System.out.println(user.toString())
+        );
+
+        System.out.println("-----------获取变量更改-----------");
+        String  userName = userData.get(userData.size() - 1).getUserName();
+        userName="String更改，我被改变了，第二次";
         System.out.println("------------" + userData.get(userData.size() - 1));
         userData.stream().forEach(
                 user -> System.out.println(user.toString())
