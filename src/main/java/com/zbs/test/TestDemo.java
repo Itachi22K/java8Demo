@@ -151,5 +151,50 @@ public class TestDemo {
 //        return date.getHours();
     }
 
+    @Test
+    public void test7() {
+        ArrayList<String> stringList = new ArrayList<>(Arrays.asList("a"));
+        // 只能用迭代器进行操作
+        /**
+         * 迭代器操作
+         * .next()必须必须.remove()之前调用。在foreach循环中，编译器会.next()在删除元素的操作后进行调用，从而导致
+         * ConcurrentModificationException。
+         */
+        Iterator<String> iter = stringList.iterator();
+        while (iter.hasNext()) {
+            // iter.next()指向数组的第一个位置的值
+            String s = iter.next();
+
+            if (s.equals("a")) {
+                iter.remove();
+            }
+        }
+        /**
+         * 2、foreach循环
+         */
+//        for (String s : stringList) {
+//            // 删除元素后，列表的大小会缩小，索引也会更改。因此，如果要使用索引删除循环内的多个元素，则无法正常工作。
+//            // java.util.ConcurrentModificationException
+//            if ("b".equals(s)) {
+//                stringList.remove(s);
+//            }
+//        }
+        /**
+         * 3、for循环
+         */
+//        for (int i = 0; i < stringList.size(); i++) {
+//            // 如果有取值比较，无论是按位置删除还是按元素删除，都是没有问题的
+//            if ("b".equals(stringList.get(i))) {
+//                // 最终结果是[a, c, d, b]
+//                stringList.remove(stringList.get(i));
+//
+//                // 最终结果是[a, b, c, d]
+////                stringList.remove(i);
+//            }
+//        }
+        System.out.println(stringList.size());
+        System.out.println(stringList);
+    }
+
 }
 
