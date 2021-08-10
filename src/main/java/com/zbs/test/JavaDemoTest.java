@@ -4,10 +4,8 @@ import com.zbs.common.Constants;
 import com.zbs.java8.stream.commonStream.User;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.math.BigDecimal;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -89,8 +87,8 @@ public class JavaDemoTest {
         );
 
         System.out.println("-----------获取变量更改-----------");
-        String  userName = userData.get(userData.size() - 1).getUserName();
-        userName="String更改，我被改变了，第二次";
+        String userName = userData.get(userData.size() - 1).getUserName();
+        userName = "String更改，我被改变了，第二次";
         System.out.println("------------" + userData.get(userData.size() - 1));
         userData.stream().forEach(
                 user -> System.out.println(user.toString())
@@ -106,6 +104,19 @@ public class JavaDemoTest {
         Integer jk = list.get(list.size() - 1);
         jk = 100;
         System.out.println(list);
+    }
+
+    @Test
+    public void testBigdecimal() {
+        BigDecimal decimal = new BigDecimal("85");
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("test", "85.00");
+        System.out.println(decimal.toString());
+        System.out.println(decimal.toString().equals(map.get("test")));
+//        System.out.println(BigDecimal.valueOf((Double) map.get("test")));
+//        System.out.println(decimal.compareTo(BigDecimal.valueOf((Double) map.get("test"))));
+//        System.out.println(decimal.compareTo(BigDecimal.valueOf(Double.parseDouble((String) map.get("test")))));
+        // compareTo(BigDecimal.valueOf(Double.parseDouble((String) jindieInvoiceMap.get("amount"))))
     }
 
 }
