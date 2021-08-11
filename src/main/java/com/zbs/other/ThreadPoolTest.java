@@ -57,4 +57,30 @@ public class ThreadPoolTest {
         }
         threadPoolExecutor.shutdown();
     }
+
+    @Test
+    public void testExecute() {
+        // execute(task) 对task里的异常会抛出，可以明确得知任务执行失败
+        ExecutorService pool = Executors.newFixedThreadPool(30);
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
+                int i = 1 / 0;
+                System.out.println("excute Thread");
+            }
+        });
+    }
+
+    @Test
+    public void testSubmit() {
+        // submit(task) 对task里的异常无法抛出，只是停止执行任务，无法报任何异常
+        ExecutorService pool = Executors.newFixedThreadPool(30);
+        pool.submit(new Runnable() {
+            @Override
+            public void run() {
+                int i = 1 / 0;
+                System.out.println("submit Thread");
+            }
+        });
+    }
 }
